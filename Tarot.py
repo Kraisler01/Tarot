@@ -9,9 +9,41 @@ def vuodenkortti():
 
     while luku >= 4: # 4 on lukujen määrä
         luku = sum(int(luku) for luku in str(luku)) # muuttaa yhteenlasketun summan erillisiksi luvuiksi ja laskee yhteen
-        print("Luku on:", luku)
-        break
-    
+        return luku
+
+     try:
+        with open(tiedosto, "r", encoding="utf-8") as f:
+            sisältö = f.read()
+    except FileNotFoundError:
+        return "Tiedostoa ei löytynyt."
+
+    # Oletetaan, että kortit on erotettu tyhjällä rivillä = "\n\n"
+    kortit = sisältö.split("\n\n")
+
+    # For loop käy läpi kaikki kortit ja etsii kortin numeron, välilyönnin ja väliviivan
+    # perusteella oikean kortin selityksen
+    for kortti in kortit:
+        if kortti.startswith(f"{luku} –"): 
+            return kortti
+
+    return "Korttia ei löytynyt."
+
+def main():
+    tiedosto = "isoarcana.txt"
+
+    #Tehdään looppi, joka pyytää käyttäjältä kortin numeroa
+    #ja tarkistaa, että se on oikea
+    while True: 
+        try:
+            kortin_numero = int(input("Anna kortin numero 0–21: "))
+            if 0 <= kortin_numero <= 21:
+                break  # Jos syöte on kelvollinen, poistutaan loopista
+            else:
+                print("Kortin numeron tulee olla välillä 0–21.")
+        except ValueError:
+            print("Anna numero välillä 0-21, ei kirjainta tai muuta merkkiä.")
+
+
 
         
 
