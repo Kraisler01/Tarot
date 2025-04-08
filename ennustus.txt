@@ -1,0 +1,108 @@
+0 – Narri - Uudet alut, vapaus, viattomuus, omaperäisyys, seikkailu
+
+"On aika hypätä tuntemattomaan! Seikkailu odottaa."
+
+
+1 – Maagikko – Tahdonvoima, kyvykkyys, resurssit, flow-tila
+
+"Kaikki on mahdollista! Nyt on sinun aikasi loistaa."
+
+
+2 – Ylipapitar - Intuitio, alitajunta, feminiinisyys, salaisuudet, tiedostamaton
+
+"Vastaukset ovat sisimmässäsi. Mutta ei vielä, nyt ei ole oikea aika toimia."
+
+
+3 – Hallitsijatar -  Nautinto, kauneus, hedelmällisyys, luonto, vauraus, äitiys
+
+"Kasvata ideoitasi! Nyt on oikea hetki luoda."
+
+
+4 – Hallitsija – Auktoriteetti, johtajuus, järjestys, isähahmo, valta ja vastuu
+
+"Ota ohjat käsiisi ja toimi päättäväisesti!"
+
+
+5 – Ylipappi - Yhteiskunta, oppiminen, auktoriteetti, perinteet, uskominen
+
+"Älä toimi ilman kunnollista pohdintaa ja valmistautumista. Luota viisauteen."
+
+
+6 – Rakastavaiset - Ihmissuhteet, rakkaus, vetovoima, valinnat, sydämen ääni
+
+"Vahva yhteys! Edessäsi on harmoniaa ja yhteisymmärrystä."
+
+
+7 – Vaunut – Tahdonvoima, itsevarmuus, määrätietoisuus, tavoitteet, voittaminen
+
+"Aja eteenpäin päättäväisesti! Voitto on lähellä."
+
+
+8 – Voima - Voima, lempeys, autenttisuus, myötätunto, sisäinen vahvuus
+
+"Sinulla on voimaa! Luota itseesi, saat sen aikaan."
+
+
+9 – Erakko - Vetäytyminen, hiljaiselo, henkinen tutkiskelu, yksinäisyys, itsereflektio
+
+"Tämä ei ole oikea aika. Ota hetki miettiäksesi ja etsiäksesi sisäistä viisautta."
+
+
+10 – Kohtalonpyörä - Muutos, kohtalo, syklit, onni, käännekohdat, karma
+
+"Onnenpyörä on muutosten puolella, hyvä aika ottaa riskejä!"
+
+
+11 – Oikeus – Tasapaino, reiluus, totuus, vastuullisuus, päätökset, moraali
+
+"Tee oikeudenmukaisia valintoja, mutta älä kiirehdi. Päätökset vaativat aikaa."
+
+
+12 – Hirtetty - Rajoittavat uskomukset, uusi näkökulma, odotus, uhraus, kärsivällisyys
+
+"Ei vielä. Tämä on aika miettiä ja katsoa tilannetta uudesta kulmasta."
+
+
+13 – Kuolema - Transformaatio, hyvästit, loppuun käsittely, irtipäästäminen, uusi alku
+
+"Tämä ei ole loppu, vaan uusi alku. Aika päästää irti ja valmistautua muutokseen."
+
+
+14 – Kohtuus - harmonia, kärsivällisyys, kohtuullisuus, itsehillintä, suojelu
+
+"Harmoninen tasapaino on avain. Nyt on oikea aika edetä rauhassa ja maltilla."
+
+
+15 – Paholainen - houkutus, pakkomielteet, riippuvuus, illuusiot, vapauden puute
+
+"Älä jää ansaan. Nyt ei ole aika tehdä valintoja, jotka rajoittavat sinua."
+
+
+16 – Torni - Kaaos, totuuden paljastuminen, vallankumous, yllättävät muutokset, tuho
+
+"Älä tee hätiköityjä päätöksiä. Jotain yllättävää saattaa tapahtua, joka muuttaa suuntaasi."
+
+
+17 – Tähti - Toivo, kiitollisuus, inspiraatio, paraneminen
+
+"Valo on nyt kanssasi. Tulevaisuus näyttää kirkkaalta!"
+
+
+18 – Kuu - Alitajunta, intuitio, illuusio, mysteeri, pelot, epäselvyys
+
+"Ole varovainen, asiat eivät ole täysin selviä eikä kaikki ole sitä miltä näyttää. Vältä hätäisiä päätöksiä."
+
+
+19 – Aurinko - Vapaus, ilo, onni, sisäinen lapsi, itsevarmuus
+
+"Aurinko paistaa tiellesi! Olet menossa oikeaan suuntaan."
+
+
+20 – Tuomio - Herääminen, havahtuminen, uudistuminen, anteeksianto
+
+"Tämä on uusi alku! Aika herätä ja kohdata oma kohtalosi."
+
+
+21 – Maailma - Täyttymys, päätökset, kokonaisuus, saavutukset, harmonia
+
+"Olet saavuttanut tavoitteesi. Nyt on aika juhlia saavutuksia!"
