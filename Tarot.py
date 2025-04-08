@@ -2,7 +2,6 @@ import random
 import textwrap
 
 
-
 def lue_tiedosto(tiedosto, kortin_numero):
     # Tämä funktio lukee tiedoston ja etsii kortin selityksen kortin numeron perusteella
     # UTF-8 koodi mahdollistaa erikoismerkkien käsittelyn kuten ääkköset
