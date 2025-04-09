@@ -20,20 +20,27 @@ def lue_tiedosto(tiedosto, kortin_numero):
         if kortti.startswith(f"{kortin_numero} –"): 
             return kortti
 
-def vuodenkortti():
-    tiedosto = "vuodenkortit.txt"
+def nayta_valikko():
 
-    paiva = int(input("Anna syntymäpäivä (pp): "))
-    kuukausi = int(input("Anna syntymäkuukausi(kk): "))
-    vuosi = int(input("Anna syntymävuosi(vvvv): "))
+    print("\n--- Tarot-ohjelma ---")
+    print("\n1. Vuoden kortti")
+    print("2. Elämän kortti")
+    print("3. Kysy korteilta")
+    print("4. Hae kortin selitys")
+    print("0. Lopeta")
 
-    luku = paiva + kuukausi + vuosi
+def satunnainen_kortti():
+    print("\n" + "Kysy mielessäsi kysymys ja anna universumin vastata." + "\n")
+    input("Paina Enter ja anna kortin johdattaa sinut vastauksen äärelle..." + "\n")
 
-    while luku >= 4: # 4 on lukujen määrä
-        luku = sum(int(luku) for luku in str(luku)) # muuttaa yhteenlasketun summan erillisiksi luvuiksi ja laskee yhteen
-        return luku
+    # Tämä funktio valitsee satunnaisen kortin ja tulostaa sen selityksen
+    kortin_numero = random.choice(range(1, 23))  #choice() valitsee satunnaisen kortin
+    selitys = lue_tiedosto("ennustus.txt", kortin_numero)
 
-def main():
+    print(f"Nostit kortin:""\n\n" + selitys + "\n")
+
+
+def kortin_selitys():
     tiedosto = "isoarcana.txt"
 
     #Tehdään looppi, joka pyytää käyttäjältä kortin numeroa
@@ -48,35 +55,31 @@ def main():
         except ValueError:
             print("Anna numero välillä 0-21, ei kirjainta tai muuta merkkiä.")
 
-
-
-        
-
+    #Haetaan kortin selitys funktiosta, joka lukee sisältöä tiedostosta
+    #ja etsii kortin numeron perusteella selityksen
+    selitys = lue_tiedosto(tiedosto, kortin_numero)
+   
+    # Muotoillaan selitys siten, että se ei ylitä 70 merkkiä, näin selityksiä on vähän mukavampia lukea
+    kappaleet = selitys.split("\n\n") # Oletetaan, että kappaleet on erotettu kahdella rivinvaihdolla
+    muotoiltu_selitys = "\n\n".join([textwrap.fill(kappale, width=90) for kappale in kappaleet])
     
-#def elamankortti():
-
-#def vapaaa_kortti():
-    #print("Sulje silmäsi, hengitä syvään ja tunne, mikä kortti kutsuu sinua.")
+    print("\n" + muotoiltu_selitys + "\n")
 
 
 def main():
-    
-
     print("Tervetuloa korttien viisauden äärelle - tässä tilassa universumi puhuu!")
-    print("Valitse kortti:")
-    print("1. Vuoden kortti")
-    #print("2. Elämän kortti")
-    #print("3. Vapaan kortti")
-    print("4. Lopeta peli")
+    nayta_valikko()
 
-    valinta = input("Valintasi (1/2/3/4): ")
+    valinta = input("Valintasi (0/1/2/3/4): ")
 
     if valinta == "1":
-        vuodenkortti()
-    #elif valinta == "2":
-       # elamankortti()
-    #elif valinta == "3":
-    #    vapaaa_kortti()
+        vuoden_kortti()
+    elif valinta == "2":
+        elaman_kortti()
+    elif valinta == "3":
+        satunnainen_kortti()
+    elif valinta == "4":
+        kortin_selitys()
     else:
         print("Jos haluat, voimme kokeilla uudelleen. Valitse intuitiosi avulla")
 
@@ -88,7 +91,10 @@ def main():
         print("Istuntomme päättyy, mutta korttien taika jää kanssasi. Pidä huolta itsestäsi!")
     else:
         print("Valinta ei ole oikein, mutta voit aina palata korttien pariin. Kiitos ja näkemiin!")
-
-
-
 main()
+
+    
+#def elamankortti():
+
+#def vapaaa_kortti():
+    #print("Sulje silmäsi, hengitä syvään ja tunne, mikä kortti kutsuu sinua.")
