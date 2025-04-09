@@ -1,4 +1,5 @@
 def nayta_valikko():
+# Funktio tulostaa valikon
 
     print("\n--- Tarot-ohjelma ---")
     print("\n1. Vuoden kortti")
@@ -12,29 +13,39 @@ def nayta_valikko():
 
 def main():
     print("Tervetuloa korttien viisauden äärelle - tässä tilassa universumi puhuu!")
-    nayta_valikko()
+    print("Tähän tulostetaan ohjeet")
 
-    valinta = input("Valintasi (0/1/2/3/4): ")
+    while True:
 
-    if valinta == "1":
-        vuoden_kortti()
-    elif valinta == "2":
-        elaman_kortti()
-    elif valinta == "3":
-        satunnainen_kortti()
-    elif valinta == "4":
-        kortin_selitys()
-    else:
-        print("Jos haluat, voimme kokeilla uudelleen. Valitse intuitiosi avulla")
+        nayta_valikko()
 
-    print("Kaipaavatko sydämesi ja mielesi vielä lisää opastusta korttien kautta?? (1 Kyllä /2 Ei)")
-    another_one = input("Valinta on sinun (1 Kyllä /2 Ei): ")
-    if another_one == "1":
-        main()
-    elif another_one == "2":
-        print("Istuntomme päättyy, mutta korttien taika jää kanssasi. Pidä huolta itsestäsi!")
-    else:
-        print("Valinta ei ole oikein, mutta voit aina palata korttien pariin. Kiitos ja näkemiin!")
+        valinta = input("Valintasi (0/1/2/3/4): ")
+
+        try: 
+
+            if valinta == "1":
+                vuoden_kortti()
+            elif valinta == "2":
+                elaman_kortti()
+            elif valinta == "3":
+                satunnainen_kortti()
+            elif valinta == "4":
+                kortin_selitys()
+            else:
+                print("Jos haluat, voimme kokeilla uudelleen. Valitse intuitiosi avulla")
+
+            print("Kaipaavatko sydämesi ja mielesi vielä lisää opastusta korttien kautta?? (1 Kyllä /2 Ei)")
+            another_one = input("Valinta on sinun (1 Kyllä /2 Ei): ")
+
+            if another_one == "1":
+                main()
+            elif another_one == "2":
+                print("Istuntomme päättyy, mutta korttien taika jää kanssasi. Pidä huolta itsestäsi!")
+            else:
+                print("Valinta ei ole oikein, mutta voit aina palata korttien pariin. Kiitos ja näkemiin!")
+                
+        except Exception as e: # Käsittelee arvaamattomat yleisimmät virheet, tallentaa ne muuttujaan ja tulostaa tiedot käyttäjälle
+            print(f"Tapahtui virhe: {e}.")
 
 
 

@@ -13,9 +13,9 @@ def elämänkortti(tiedosto, kortin_numero, kortti_parit):
         kortin_numero = sum(int(kortin_numero) for kortin_numero in str(kortin_numero)) # muuttaa yhteenlasketun summan erillisiksi luvuiksi ja laskee yhteen
         
 
-#poikkeukset, jotka eivät mene yhteen kortti parien kanssa
-#eli lasketaan eka normi kortit ja jos luku on 2 lukuinen niin ensimmäinen summa on 2 lukuinen 
-#sen summa on eka kortti ja korttiparit ovat poikkeukset tässä alapuolella
+ #poikkeukset, jotka eivät mene yhteen kortti parien kanssa
+ #eli lasketaan eka normi kortit ja jos luku on 2 lukuinen niin ensimmäinen summa on 2 lukuinen 
+ #sen summa on eka kortti ja korttiparit ovat poikkeukset tässä alapuolella
 
 
     elif kortin_numero == 8:
