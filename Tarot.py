@@ -22,12 +22,16 @@ def lue_tiedosto(tiedosto, kortin_numero):
 
 def nayta_valikko():
 
-    print("\n--- Tarot-ohjelma ---")
-    print("\n1. Vuoden kortti")
-    print("2. Elämän kortti")
-    print("3. Kysy korteilta")
-    print("4. Hae kortin selitys")
-    print("0. Lopeta")
+    print('''
+    Syötä haluamaasi toimenpidettä vastaava luku.
+        
+    1 Vuoden kortti
+    2 Elämän kortti
+    3 Kysy korteilta
+    4 Hae kortin selitys
+    0 Lopeta ohjelma
+    ''')
+
 
 def satunnainen_kortti():
     print("\n" + "Kysy mielessäsi kysymys ja anna universumin vastata." + "\n")
@@ -59,7 +63,7 @@ def kortin_selitys():
     #ja etsii kortin numeron perusteella selityksen
     selitys = lue_tiedosto(tiedosto, kortin_numero)
    
-    # Muotoillaan selitys siten, että se ei ylitä 70 merkkiä, näin selityksiä on vähän mukavampia lukea
+    # Muotoillaan selitys siten, että se ei ylitä 90 merkkiä, näin selityksiä on vähän mukavampia lukea
     kappaleet = selitys.split("\n\n") # Oletetaan, että kappaleet on erotettu kahdella rivinvaihdolla
     muotoiltu_selitys = "\n\n".join([textwrap.fill(kappale, width=90) for kappale in kappaleet])
     
@@ -67,7 +71,7 @@ def kortin_selitys():
 
 
 def main():
-    print("Tervetuloa korttien viisauden äärelle - tässä tilassa universumi puhuu!")
+    print("\nTervetuloa korttien viisauden äärelle - tässä tilassa universumi puhuu!")
     nayta_valikko()
 
     valinta = input("Valintasi (0/1/2/3/4): ")
