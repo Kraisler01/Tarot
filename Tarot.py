@@ -1,6 +1,15 @@
 import random
 import textwrap
 
+RED = '\033[38;2;255;0;95m'
+GREEN = '\033[38;2;135;215;135m'
+LILA = '\033[38;2;215;175;225m'
+BLUE = '\033[38;2;135;215;225m'
+YELLOW = '\033[38;2;255;255;135m'
+PINK = '\033[38;2;255;175;255m'
+CYAN = '\033[96m'
+RESET = '\033[0m'
+
 
 def lue_tiedosto(tiedosto, kortin_numero):
     # Tämä funktio lukee tiedoston ja etsii kortin selityksen kortin numeron perusteella
@@ -87,7 +96,7 @@ def main():
     else:
         print("Jos haluat, voimme kokeilla uudelleen. Valitse intuitiosi avulla")
 
-    print("Kaipaavatko sydämesi ja mielesi vielä lisää opastusta korttien kautta?? (1 Kyllä /2 Ei)")
+    print("Kaipaavatko sydämesi ja mielesi vielä lisää opastusta korttien kautta?\n")
     another_one = input("Valinta on sinun (1 Kyllä /2 Ei): ")
     if another_one == "1":
         main()
@@ -100,5 +109,3 @@ main()
     
 #def elamankortti():
 
-#def vapaaa_kortti():
-    #print("Sulje silmäsi, hengitä syvään ja tunne, mikä kortti kutsuu sinua.")

@@ -18,8 +18,30 @@ def lue_tiedosto(tiedosto, kortin_numero):
         if kortti.startswith(f"{kortin_numero} –"): 
             return kortti
 
+#En saanut tätä toimimaan? :--()
+
+# def vuodenkortti():
+#     tiedosto = "vuodenkortti.txt"
+
+#     paiva = int(input("Anna syntymäpäivä (pp): "))
+#     kuukausi = int(input("Anna syntymäkuukausi(kk): "))
+#     vuosi = int(input("Anna syntymävuosi(vvvv): "))
+
+#     luku = paiva + kuukausi + vuosi
+
+#     while luku >= 4: # 4 on lukujen määrä
+#         luku = sum(int(luku) for luku in str(luku)) # muuttaa yhteenlasketun summan erillisiksi luvuiksi ja laskee yhteen
+    
+    
+#     print(f"Vuoden korttisi on: {luku}")
+#     selitys = lue_tiedosto(tiedosto, luku)
+#     print(f"Nostit kortin:\n\n" + selitys + "\n")
+#     return selitys
+
+# vuodenkortti()
+
 def vuodenkortti():
-    tiedosto = "vuodenkortit.txt"
+    tiedosto = "vuodenkortti.txt"
 
     paiva = int(input("Anna syntymäpäivä (pp): "))
     kuukausi = int(input("Anna syntymäkuukausi(kk): "))
@@ -27,6 +49,14 @@ def vuodenkortti():
 
     luku = paiva + kuukausi + vuosi
 
-    while luku >= 4: # 4 on lukujen määrä
-        luku = sum(int(luku) for luku in str(luku)) # muuttaa yhteenlasketun summan erillisiksi luvuiksi ja laskee yhteen
-        return luku
+    while luku >= 10:  
+        luku = sum(int(digit) for digit in str(luku))  
+
+    print(f"\nVuoden korttisi on: {luku}")
+    selitys = lue_tiedosto(tiedosto, luku)
+    print(f"\n\n" + selitys + "\n")
+    return selitys
+
+vuodenkortti()
+
+
