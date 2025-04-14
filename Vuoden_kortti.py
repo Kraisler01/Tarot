@@ -40,17 +40,24 @@ def lue_tiedosto(tiedosto, kortin_numero):
 
 # vuodenkortti()
 
+
+
+# vuodenkortti()
+
+
 def vuodenkortti():
     tiedosto = "vuodenkortti.txt"
 
     paiva = int(input("Anna syntymäpäivä (pp): "))
-    kuukausi = int(input("Anna syntymäkuukausi(kk): "))
-    vuosi = int(input("Anna syntymävuosi(vvvv): "))
+    kuukausi = int(input("Anna syntymäkuukausi (kk): "))
+    vuosi = int(input("Anna vuosi, jolle haluat nostaa kortin esim. 2025 (vvvv): "))
 
     luku = paiva + kuukausi + vuosi
 
     while luku >= 10:
         luku = sum(int(digit) for digit in str(luku))  
+    while luku >= 22:  
+        luku = sum(int(numero) for numero in str(luku))  
 
     print(f"\nVuoden korttisi on: {luku}")
     selitys = lue_tiedosto(tiedosto, luku)

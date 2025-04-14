@@ -2,12 +2,16 @@ import random
 import textwrap
 import time
 
+#Määritellään RGB-väri koodit vakioina:
+
 RED = '\033[38;2;255;0;95m'
 GREEN = '\033[38;2;135;215;135m'
 LILA = '\033[38;2;215;175;225m'
 BLUE = '\033[38;2;135;215;225m'
 YELLOW = '\033[38;2;255;255;135m'
-PINK = '\033[38;2;255;175;255m'
+DEEPMAGENTA = '\033[38;2;128;0;128m'
+PINK = '\033[38;2;255;105;170m'
+ORANGE = '\033[38;2;240;163;10m'
 CYAN = '\033[96m'
 RESET = '\033[0m'
 
@@ -31,20 +35,35 @@ def lue_tiedosto(tiedosto, kortin_numero):
             return kortti
 
 def nayta_valikko():
+    print(f'''
+        Syötä haluamaasi toimenpidettä vastaava luku.
 
-    print('''
-    Syötä haluamaasi toimenpidettä vastaava luku.
-        
-    1 Vuoden kortti
-    2 Elämän kortti
-    3 Kysy korteilta
-    4 Hae kortin selitys
-    0 Lopeta ohjelma
-    ''')
+        {ORANGE}1 Vuoden kortti{RESET}
+        {PINK}2 Elämän kortti{RESET}
+        {GREEN}3 Kysy korteilta{RESET}
+        {BLUE}4 Hae kortin selitys{RESET}
+        {DEEPMAGENTA}0 Lopeta ohjelma{RESET}
+        ''')
+
+def vuodenkortti():
+    tiedosto = "vuodenkortti.txt"
+
+    paiva = int(input("Anna syntymäpäivä (pp): "))
+    kuukausi = int(input("Anna syntymäkuukausi (kk): "))
+    vuosi = int(input("Anna vuosi, jolle haluat nostaa kortin esim. 2025 (vvvv): "))
+
+    luku = paiva + kuukausi + vuosi
+
+    while luku >= 22:  
+        luku = sum(int(numero) for numero in str(luku))  
+
+    print(f"\nVuoden korttisi on: {luku}")
+    selitys = lue_tiedosto(tiedosto, luku)
+    print(f"\n\n" + selitys + "\n")
+    return selitys
 
 
 def satunnainen_kortti():
-    
     text = "*✧･ﾟ: *✧･ﾟ:"
 
     print("\n" + "Kysy mielessäsi kysymys ja anna universumin vastata." + "\n")
@@ -59,8 +78,8 @@ def satunnainen_kortti():
     
     # Tulosta jokainen merkki puolen sekunnin välein
     for char in text:
-        print(char, end='', flush=True)
-        time.sleep(0.5)
+        print(f"{YELLOW}{char}{RESET}", end='', flush=True)
+        time.sleep(0.3)
     
     print(f"\n\nNostit kortin:"f"{GREEN}""\n\n" + selitys + "\n"f"{RESET}")
 
@@ -91,8 +110,9 @@ def kortin_selitys():
     
     print("\nHaetaan korttia pakasta...\n")
     for char in text:
-        print(char, end='', flush=True)
-        time.sleep(0.5)
+        print(f"{YELLOW}{char}{RESET}", end='', flush=True)
+        time.sleep(0.3)
+    
     print(f"{BLUE}""\n\n" + muotoiltu_selitys + "\n"f"{RESET}")
     time.sleep(2)
 
@@ -105,7 +125,7 @@ def main():
     valinta = input(f"{LILA}""Valintasi (0/1/2/3/4): "f"{RESET}")
 
     if valinta == "1":
-        vuoden_kortti()
+        vuodenkortti()
     elif valinta == "2":
         elaman_kortti()
     elif valinta == "3":
@@ -113,7 +133,7 @@ def main():
     elif valinta == "4":
         kortin_selitys()
     elif valinta == "0":
-        print(f"{PINK}""\n*✧･ﾟ: *✧･ﾟKiitos ja näkemiin! ☾ ⋆*･ﾟ:⋆*･ﾟ\n"f"{RESET}")
+        print(f"{YELLOW}""\n*✧･ﾟ: *✧･ﾟKiitos ja näkemiin! ☾ ⋆*･ﾟ:⋆*･ﾟ\n"f"{RESET}")
         return
     else:
         print(f"{LILA}""\nJos haluat, voimme kokeilla uudelleen. Valitse intuitiosi avulla"f"{RESET}")
