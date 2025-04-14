@@ -47,8 +47,9 @@ def nayta_valikko():
 
 def vuodenkortti():
     tiedosto = "vuodenkortti.txt"
+    text = '☾ ⋆*･ﾟ:⋆*･ﾟ'
 
-    paiva = int(input("Anna syntymäpäivä (pp): "))
+    paiva = int(input("\nAnna syntymäpäivä (pp): "))
     kuukausi = int(input("Anna syntymäkuukausi (kk): "))
     vuosi = int(input("Anna vuosi, jolle haluat nostaa kortin esim. 2025 (vvvv): "))
 
@@ -57,10 +58,19 @@ def vuodenkortti():
     while luku >= 22:  
         luku = sum(int(numero) for numero in str(luku))  
 
-    print(f"\nVuoden korttisi on: {luku}")
     selitys = lue_tiedosto(tiedosto, luku)
-    print(f"\n\n" + selitys + "\n")
-    return selitys
+   
+    # Muotoillaan selitys siten, että se ei ylitä 90 merkkiä, näin selityksiä on vähän mukavampia lukea
+    kappaleet = selitys.split("\n\n") # Oletetaan, että kappaleet on erotettu kahdella rivinvaihdolla
+    muotoiltu_selitys = "\n\n".join([textwrap.fill(kappale, width=90) for kappale in kappaleet])
+    
+    print("\nHaetaan korttia pakasta...\n")
+    for char in text:
+        print(f"{YELLOW}{char}{RESET}", end='', flush=True)
+        time.sleep(0.3)
+    
+    print(f"{ORANGE}""\n\n" + muotoiltu_selitys + "\n"f"{RESET}")
+    time.sleep(2)
 
 
 def satunnainen_kortti():
