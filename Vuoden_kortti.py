@@ -43,10 +43,18 @@ def lue_tiedosto(tiedosto, kortin_numero):
 
 #     luku = paiva + kuukausi + vuosi
 
+<<<<<<< HEAD
 #     while luku >= 22:  
 #         luku = sum(int(numero) for numero in str(luku))  
 
 #     print(f"\nVuoden korttisi on: {luku}")
+=======
+#     while luku >= 4: # 4 on numeroiden määrä
+#         luku = sum(int(luku) for luku in str(luku)) # muuttaa yhteenlasketun summan erillisiksi luvuiksi ja laskee yhteen
+    
+    
+#     print(f"Vuoden korttisi on: {luku}")
+>>>>>>> e84ca241db92754a9b65cd513429a9d41823d902
 #     selitys = lue_tiedosto(tiedosto, luku)
 #     print(f"\n\n" + selitys + "\n")
 #     return selitys
@@ -63,6 +71,8 @@ def vuodenkortti():
 
     luku = paiva + kuukausi + vuosi
 
+    while luku >= 10:
+        luku = sum(int(digit) for digit in str(luku))  
     while luku >= 22:  
         luku = sum(int(numero) for numero in str(luku))  
 
