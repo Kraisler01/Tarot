@@ -37,9 +37,32 @@ def vuodenkortti():
     tiedosto = "vuodenkortti.txt"
     text = '☾ ⋆*･ﾟ:⋆*･ﾟ'
 
-    paiva = int(input("\nAnna syntymäpäivä (pp): "))
-    kuukausi = int(input("Anna syntymäkuukausi (kk): "))
-    vuosi = int(input("Anna vuosi, jolle haluat nostaa kortin esim. 2025 (vvvv): "))
+    while True:
+        try:
+            paiva = int(input("\nAnna syntymäpäivä (pp): "))
+            if not 1 <= paiva <= 31:
+                raise ValueError
+            break
+        except ValueError:
+            print("Syötä kelvollinen päivä (1–31).")
+
+    while True:
+        try:
+            kuukausi = int(input("Anna syntymäkuukausi (kk): "))
+            if not 1 <= kuukausi <= 12:
+                raise ValueError
+            break
+        except ValueError:
+            print("Syötä kelvollinen kuukausi (1–12).")
+
+    while True:
+        try:
+            vuosi = int(input("Anna vuosi, jolle haluat nostaa kortin esim. 2025 (vvvv): "))
+            if not 1000 <= vuosi <= 9999:
+                raise ValueError
+            break
+        except ValueError:
+            print("Syötä kelvollinen vuosiluku nelinumeroisena (esim. 2025).")
 
     luku = paiva + kuukausi + vuosi
 

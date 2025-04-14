@@ -11,7 +11,7 @@ BLUE = '\033[38;2;135;215;225m'
 YELLOW = '\033[38;2;255;255;135m'
 DEEPMAGENTA = '\033[38;2;128;0;128m'
 PINK = '\033[38;2;255;105;170m'
-ORANGE = '\033[38;2;240;163;10m'
+ORANGE = '\033[38;2;255;160;122m'
 CYAN = '\033[96m'
 RESET = '\033[0m'
 
@@ -49,9 +49,32 @@ def vuodenkortti():
     tiedosto = "vuodenkortti.txt"
     text = '☾ ⋆*･ﾟ:⋆*･ﾟ'
 
-    paiva = int(input("\nAnna syntymäpäivä (pp): "))
-    kuukausi = int(input("Anna syntymäkuukausi (kk): "))
-    vuosi = int(input("Anna vuosi, jolle haluat nostaa kortin esim. 2025 (vvvv): "))
+    while True:
+        try:
+            paiva = int(input("\nAnna syntymäpäivä (pp): "))
+            if not 1 <= paiva <= 31:
+                raise ValueError
+            break
+        except ValueError:
+            print(f"{RED}""\nSyötä kelvollinen päivä (1–31)."f"{RESET}")
+
+    while True:
+        try:
+            kuukausi = int(input("Anna syntymäkuukausi (kk): "))
+            if not 1 <= kuukausi <= 12:
+                raise ValueError
+            break
+        except ValueError:
+            print(f"{RED}""\nSyötä kelvollinen kuukausi (1–12)."f"{RESET}")
+
+    while True:
+        try:
+            vuosi = int(input("Anna vuosi, jolle haluat nostaa kortin esim. 2025 (vvvv): "))
+            if not 1000 <= vuosi <= 9999:
+                raise ValueError
+            break
+        except ValueError:
+            print(f"{RED}""\nSyötä kelvollinen vuosiluku nelinumeroisena (esim. 2025)."f"{RESET}")
 
     luku = paiva + kuukausi + vuosi
 
