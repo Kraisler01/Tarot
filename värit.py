@@ -1,4 +1,5 @@
 # install ultraprint
+import time
 
 RED = '\033[38;2;255;0;95m'
 GREEN = '\033[38;2;135;215;135m'
@@ -16,4 +17,15 @@ print(f"{YELLOW}Kissa koira hevonen karhu hamsteri käärme"f"{RESET}")
 print(f"{PINK}Kissa koira hevonen karhu hamsteri käärme"f"{RESET}")
 print(f"{CYAN}Kissa koira hevonen karhu hamsteri käärme"f"{RESET}")
 print(f"{RED}Kissa koira hevonen karhu hamsteri käärme"f"{RESET}")
+
+
+
+
+# Määritä merkkijono
+text = "*✧･ﾟ: *✧･ﾟ:"
+
+# Tulosta jokainen merkki puolen sekunnin välein
+for char in text:
+    print(char, end='', flush=True)
+    time.sleep(0.5)
 

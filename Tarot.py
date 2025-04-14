@@ -44,6 +44,9 @@ def nayta_valikko():
 
 
 def satunnainen_kortti():
+    
+    text = "*✧･ﾟ: *✧･ﾟ:"
+
     print("\n" + "Kysy mielessäsi kysymys ja anna universumin vastata." + "\n")
     input("Paina Enter ja anna kortin johdattaa sinut vastauksen äärelle..." + "\n")
 
@@ -53,22 +56,28 @@ def satunnainen_kortti():
 
     time.sleep(1)
     print("Sekoitetaan kortteja...\n")
-    time.sleep(2)
-    print(f"Nostit kortin:"f"{GREEN}""\n\n" + selitys + "\n"f"{RESET}")
+    
+    # Tulosta jokainen merkki puolen sekunnin välein
+    for char in text:
+        print(char, end='', flush=True)
+        time.sleep(0.5)
+    
+    print(f"\n\nNostit kortin:"f"{GREEN}""\n\n" + selitys + "\n"f"{RESET}")
 
 
 def kortin_selitys():
     tiedosto = "isoarcana.txt"
+    text = '☾ ⋆*･ﾟ:⋆*･ﾟ'
 
     #Tehdään looppi, joka pyytää käyttäjältä kortin numeroa
     #ja tarkistaa, että se on oikea
     while True: 
         try:
-            kortin_numero = int(input("Anna kortin numero 0–21: "))
+            kortin_numero = int(input("\nAnna kortin numero, josta haluat tietää lisää (0–21): "))
             if 0 <= kortin_numero <= 21:
                 break  # Jos syöte on kelvollinen, poistutaan loopista
             else:
-                print(f"{RED}""Kortin numeron tulee olla välillä 0–21."f"{RESET}")
+                print(f"{RED}""\nKortin numeron tulee olla välillä 0–21."f"{RESET}")
         except ValueError:
             print(f"{RED}""Anna numero välillä 0-21, ei kirjainta tai muuta merkkiä."f"{RESET}")
 
@@ -80,7 +89,12 @@ def kortin_selitys():
     kappaleet = selitys.split("\n\n") # Oletetaan, että kappaleet on erotettu kahdella rivinvaihdolla
     muotoiltu_selitys = "\n\n".join([textwrap.fill(kappale, width=90) for kappale in kappaleet])
     
-    print("\n" + muotoiltu_selitys + "\n")
+    print("\nHaetaan korttia pakasta...\n")
+    for char in text:
+        print(char, end='', flush=True)
+        time.sleep(0.5)
+    print(f"{BLUE}""\n\n" + muotoiltu_selitys + "\n"f"{RESET}")
+    time.sleep(2)
 
 
 def main():
@@ -98,11 +112,14 @@ def main():
         satunnainen_kortti()
     elif valinta == "4":
         kortin_selitys()
+    elif valinta == "0":
+        print(f"{PINK}""\n*✧･ﾟ: *✧･ﾟKiitos ja näkemiin! ☾ ⋆*･ﾟ:⋆*･ﾟ\n"f"{RESET}")
+        return
     else:
-        print(f"{LILA}""Jos haluat, voimme kokeilla uudelleen. Valitse intuitiosi avulla"f"{RESET}")
+        print(f"{LILA}""\nJos haluat, voimme kokeilla uudelleen. Valitse intuitiosi avulla"f"{RESET}")
 
-    print(f"{LILA}""Kaipaavatko sydämesi ja mielesi vielä lisää opastusta korttien kautta?\n"f"{RESET}")
-    another_one = input(f"{LILA}""\nValinta on sinun (1 Kyllä /2 Ei): "f"{RESET}")
+    print(f"{LILA}""\nKaipaavatko sydämesi ja mielesi vielä lisää opastusta korttien kautta?\n"f"{RESET}")
+    another_one = input(f"{LILA}""Valinta on sinun (1 Kyllä /2 Ei): "f"{RESET}")
     if another_one == "1":
         main()
     elif another_one == "2":
