@@ -1,5 +1,6 @@
 import random
 import textwrap
+import time
 
 RED = '\033[38;2;255;0;95m'
 GREEN = '\033[38;2;135;215;135m'
@@ -50,7 +51,10 @@ def satunnainen_kortti():
     kortin_numero = random.choice(range(1, 23))  #choice() valitsee satunnaisen kortin
     selitys = lue_tiedosto("ennustus.txt", kortin_numero)
 
-    print(f"Nostit kortin:""\n\n" + selitys + "\n")
+    time.sleep(1)
+    print("Sekoitetaan kortteja...\n")
+    time.sleep(2)
+    print(f"Nostit kortin:"f"{GREEN}""\n\n" + selitys + "\n"f"{RESET}")
 
 
 def kortin_selitys():
@@ -64,9 +68,9 @@ def kortin_selitys():
             if 0 <= kortin_numero <= 21:
                 break  # Jos syöte on kelvollinen, poistutaan loopista
             else:
-                print("Kortin numeron tulee olla välillä 0–21.")
+                print(f"{RED}""Kortin numeron tulee olla välillä 0–21."f"{RESET}")
         except ValueError:
-            print("Anna numero välillä 0-21, ei kirjainta tai muuta merkkiä.")
+            print(f"{RED}""Anna numero välillä 0-21, ei kirjainta tai muuta merkkiä."f"{RESET}")
 
     #Haetaan kortin selitys funktiosta, joka lukee sisältöä tiedostosta
     #ja etsii kortin numeron perusteella selityksen
@@ -80,10 +84,11 @@ def kortin_selitys():
 
 
 def main():
-    print("\nTervetuloa korttien viisauden äärelle - tässä tilassa universumi puhuu!")
+    print(f"{LILA}""\nTervetuloa korttien viisauden äärelle - tässä tilassa universumi puhuu!"f"{RESET}")
+    time.sleep(1)
     nayta_valikko()
 
-    valinta = input("Valintasi (0/1/2/3/4): ")
+    valinta = input(f"{LILA}""Valintasi (0/1/2/3/4): "f"{RESET}")
 
     if valinta == "1":
         vuoden_kortti()
@@ -94,16 +99,16 @@ def main():
     elif valinta == "4":
         kortin_selitys()
     else:
-        print("Jos haluat, voimme kokeilla uudelleen. Valitse intuitiosi avulla")
+        print(f"{LILA}""Jos haluat, voimme kokeilla uudelleen. Valitse intuitiosi avulla"f"{RESET}")
 
-    print("Kaipaavatko sydämesi ja mielesi vielä lisää opastusta korttien kautta?\n")
-    another_one = input("Valinta on sinun (1 Kyllä /2 Ei): ")
+    print(f"{LILA}""Kaipaavatko sydämesi ja mielesi vielä lisää opastusta korttien kautta?\n"f"{RESET}")
+    another_one = input(f"{LILA}""\nValinta on sinun (1 Kyllä /2 Ei): "f"{RESET}")
     if another_one == "1":
         main()
     elif another_one == "2":
-        print("Istuntomme päättyy, mutta korttien taika jää kanssasi. Pidä huolta itsestäsi!")
+        print(f"{LILA}""\nIstuntomme päättyy, mutta korttien taika jää kanssasi. Pidä huolta itsestäsi!\n"f"{RESET}")
     else:
-        print("Valinta ei ole oikein, mutta voit aina palata korttien pariin. Kiitos ja näkemiin!")
+        print(f"{LILA}""\nValinta ei ole oikein, mutta voit aina palata korttien pariin. Kiitos ja näkemiin!\n"f"{RESET}")
 main()
 
     
