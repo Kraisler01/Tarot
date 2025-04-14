@@ -45,6 +45,23 @@ def nayta_valikko():
         {DEEPMAGENTA}0 Lopeta ohjelma{RESET}
         ''')
 
+def vuodenkortti():
+    tiedosto = "vuodenkortti.txt"
+
+    paiva = int(input("Anna syntymäpäivä (pp): "))
+    kuukausi = int(input("Anna syntymäkuukausi (kk): "))
+    vuosi = int(input("Anna vuosi, jolle haluat nostaa kortin esim. 2025 (vvvv): "))
+
+    luku = paiva + kuukausi + vuosi
+
+    while luku >= 22:  
+        luku = sum(int(numero) for numero in str(luku))  
+
+    print(f"\nVuoden korttisi on: {luku}")
+    selitys = lue_tiedosto(tiedosto, luku)
+    print(f"\n\n" + selitys + "\n")
+    return selitys
+
 
 def satunnainen_kortti():
     text = "*✧･ﾟ: *✧･ﾟ:"
@@ -108,7 +125,7 @@ def main():
     valinta = input(f"{LILA}""Valintasi (0/1/2/3/4): "f"{RESET}")
 
     if valinta == "1":
-        vuoden_kortti()
+        vuodenkortti()
     elif valinta == "2":
         elaman_kortti()
     elif valinta == "3":
