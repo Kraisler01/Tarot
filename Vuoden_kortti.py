@@ -29,7 +29,7 @@ def lue_tiedosto(tiedosto, kortin_numero):
 
 #     luku = paiva + kuukausi + vuosi
 
-#     while luku >= 4: # 4 on lukujen määrä
+#     while luku >= 4: # 4 on numeroiden määrä
 #         luku = sum(int(luku) for luku in str(luku)) # muuttaa yhteenlasketun summan erillisiksi luvuiksi ja laskee yhteen
     
     
@@ -49,7 +49,7 @@ def vuodenkortti():
 
     luku = paiva + kuukausi + vuosi
 
-    while luku >= 10:  
+    while luku >= 10:
         luku = sum(int(digit) for digit in str(luku))  
 
     print(f"\nVuoden korttisi on: {luku}")
