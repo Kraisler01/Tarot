@@ -119,6 +119,9 @@ def elaman_kortti():
     else:
         kortti2 = (kortti1 // 10) + (kortti1 % 10)
 
+    if kortti2 < 10:
+        kortti2 = kortti1
+
     print(f"{GREEN}Kortin numero on ensimmäisen laskun jälkeen: {kortti1}{RESET}")
     print(f"{GREEN}Kortin numero on toisen laskun jälkeen: {kortti2}{RESET}")
     
