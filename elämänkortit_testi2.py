@@ -54,9 +54,28 @@ def elämänkortti():
 
     print(f"{GREEN}Kortin numero on toisen laskun jälkeen: {kortin_numero}{RESET}")
 
-    korttipakka = {10: 10, 11: 11, 12: 12, 13: 13, 14: 14, 
-                   15: 15, 16: 16, 17: 17, 18: 18, 19: 19,
-                   20: 20, 21: 21}
+    korttipakka = {10,11,12,13,14,15,16,17,18,19,20,21} # korttipakka 10-21
+    
+    if kortin_numero == 8:
+        kortin_numero = 17
+
+    elif kortin_numero == 19:
+       kortin_numero =19 #maagikko 3 korttia, kortti 1,10,19
+    
+    elif kortin_numero == 10:
+        kortin_numero = 10
+
+    elif kortin_numero == 11:
+        kortin_numero = 11
+    
+    elif kortin_numero == 20:
+        kortin_numero =20
+
+    elif kortin_numero == 12:
+        kortin_numero = 12
+    
+    elif kortin_numero == 21: 
+        kortin_numero = 21
 
     kortin_numero = korttipakka.get(kortin_numero, None)
     if kortin_numero is None:

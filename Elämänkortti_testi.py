@@ -53,6 +53,8 @@ def elämänkortti():
     if 10 <= kortin_numero <= 99: # tarkistaa, että kortin numero on kahden numeron luku
         kortin_numero = sum(int(kortin_numero) for kortin_numero in str(kortin_numero)) # muuttaa yhteenlasketun summan erillisiksi luvuiksi ja laskee yhteen
         kortin_numero + kortin_numero
+
+     
     
     print(f"{GREEN}Kortin numero on: {kortin_numero}{RESET}") # tulostaa kortin numeron
 
