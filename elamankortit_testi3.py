@@ -31,7 +31,7 @@ def lue_tiedosto(tiedosto, kortti2):
         if kortti.startswith(f"{kortti2} –"):
             return kortti
 
-def elämänkortti():
+def elaman_kortti():
 
     tiedosto = "elamankortit.txt"
     text = '☾ ⋆*･ﾟ:⋆*･ﾟ'

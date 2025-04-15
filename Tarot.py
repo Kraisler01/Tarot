@@ -95,6 +95,53 @@ def vuodenkortti():
     print(f"{ORANGE}""\n\n" + muotoiltu_selitys + "\n"f"{RESET}")
     time.sleep(2)
 
+def elaman_kortti():
+
+    tiedosto = "elamankortit.txt"
+    text = '☾ ⋆*･ﾟ:⋆*･ﾟ'
+
+    try:
+        paiva = int(input("Anna syntymäpäivä (pp): "))
+        kuukausi = int(input("Anna syntymäkuukausi(kk): "))
+        vuosi = int(input("Anna syntymävuosi(vvvv): "))
+
+        vuoden_parit = [int(vuosi) for vuosi in str(vuosi)]
+        kortti1 = (paiva + kuukausi + sum(vuoden_parit)) // 10 + (paiva + kuukausi + sum(vuoden_parit)) % 10
+        kortti2 = ""
+    except ValueError:
+        print('Hups, en tunnista tätä päivämäärää. Syötäthän vain kokonaislukuja!')
+        return
+    
+    if kortti1 == 10:
+        kortti2 = 19
+    elif kortti1 < 10:
+        kortti2 = kortti1 + 9
+    else:
+        kortti2 = (kortti1 // 10) + (kortti1 % 10)
+
+    print(f"{GREEN}Kortin numero on ensimmäisen laskun jälkeen: {kortti1}{RESET}")
+    print(f"{GREEN}Kortin numero on toisen laskun jälkeen: {kortti2}{RESET}")
+    
+    if kortti2 < 10 or kortti2 > 22:    # Tarkistaa löytyykö lukua vastaavaa korttia
+        print(f"{RED}Kortin numero ei vastaa kortteja pakassa.{RESET}")
+        return
+    
+    selitys = lue_tiedosto(tiedosto, kortti2)
+   
+    if selitys is None:
+        print(f"{RED}Kortin selitystä ei löytynyt tiedostosta.{RESET}")
+        return
+
+    kappaleet = selitys.split("\n\n")
+    muotoiltu_selitys = "\n\n".join([textwrap.fill(kappale, width=90) for kappale in kappaleet])
+
+    print("\nHaetaan korttia pakasta...\n")
+    for char in text:
+        print(f"{YELLOW}{char}{RESET}", end='', flush=True)
+        time.sleep(0.3)
+
+    print(f"{ORANGE}\n\n{muotoiltu_selitys}\n{RESET}")
+    time.sleep(2)
 
 def satunnainen_kortti():
     text = "*✧･ﾟ: *✧･ﾟ:"
@@ -181,6 +228,5 @@ def main():
         print(f"{LILA}""\nValinta ei ole oikein, mutta voit aina palata korttien pariin. Kiitos ja näkemiin!\n"f"{RESET}")
 main()
 
-    
-#def elamankortti():
 
+# elämän korttien tulostetta vois muokata jotenkin selkeemmäks niin että lahjat ja haasteet olis omilla riveillä
