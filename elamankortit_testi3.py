@@ -79,4 +79,4 @@ def elaman_kortti():
     print(f"{ORANGE}\n\n{muotoiltu_selitys}\n{RESET}")
     time.sleep(2)
 
-elämänkortti()
+elaman_kortti()
