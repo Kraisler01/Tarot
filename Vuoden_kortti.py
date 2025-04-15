@@ -25,12 +25,12 @@ def lue_tiedosto(tiedosto, kortin_numero):
 
     # Oletetaan, että kortit on erotettu kolmella tyhjällä rivillä = "\n\n\n"
     kortit = sisältö.split("\n\n\n")
-
     # For loop käy läpi kaikki kortit ja etsii kortin numeron, välilyönnin ja väliviivan
     # perusteella oikean kortin selityksen
     for kortti in kortit:
         if kortti.startswith(f"{kortin_numero} –"): 
             return kortti
+        
 
 
 def vuodenkortti():
