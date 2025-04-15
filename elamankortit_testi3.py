@@ -2,8 +2,6 @@ import textwrap
 import time
 import random
 
-
-
 RED = '\033[38;2;255;0;95m'
 GREEN = '\033[38;2;135;215;135m'
 LILA = '\033[38;2;215;175;225m'
@@ -16,15 +14,15 @@ CYAN = '\033[96m'
 RESET = '\033[0m'
 
 def lue_tiedosto(tiedosto, kortti2):
-    # Tämä funktio lukee tiedoston ja etsii kortin selityksen kortin numeron perusteella
-    # UTF-8 koodi mahdollistaa erikoismerkkien käsittelyn kuten ääkköset
+    # Lukee tiedoston ja etsii selityksen kortin numeron perusteella
+    # UTF-8 koodi mahdollistaa erikoismerkkien käsittelyn (kuten ääkköset)
     try:
         with open(tiedosto, "r", encoding="utf-8") as f:
             sisältö = f.read()
     except FileNotFoundError:
         return "Tiedostoa ei löytynyt."
 
-    # Oletetaan, että kortit on erotettu kolmella tyhjällä rivillä = "\n\n\n"
+    # Oletetaan, että kortit on erotettu kolmella rivinvaihdolla = "\n\n\n"
     kortit = sisältö.split("\n\n\n")
 
     # For loop käy läpi kaikki kortit ja etsii kortin numeron, välilyönnin ja väliviivan
@@ -32,49 +30,43 @@ def lue_tiedosto(tiedosto, kortti2):
     for kortti in kortit:
         if kortti.startswith(f"{kortti2} –"):
             return kortti
-    print(kortit)
-
 
 def elämänkortti():
 
     tiedosto = "elamankortit.txt"
     text = '☾ ⋆*･ﾟ:⋆*･ﾟ'
 
-    paiva = int(input("Anna syntymäpäivä (pp): "))
-    kuukausi = int(input("Anna syntymäkuukausi(kk): "))
-    vuosi = int(input("Anna syntymävuosi(vvvv): "))
+    try:
+        paiva = int(input("Anna syntymäpäivä (pp): "))
+        kuukausi = int(input("Anna syntymäkuukausi(kk): "))
+        vuosi = int(input("Anna syntymävuosi(vvvv): "))
 
-    vuoden_parit = [int(vuosi) for vuosi in str(vuosi)]
-    kortti1 = (paiva + kuukausi + sum(vuoden_parit)) // 10 + (paiva + kuukausi + sum(vuoden_parit)) % 10
-    kortti2 = ""
+        vuoden_parit = [int(vuosi) for vuosi in str(vuosi)]
+        kortti1 = (paiva + kuukausi + sum(vuoden_parit)) // 10 + (paiva + kuukausi + sum(vuoden_parit)) % 10
+        kortti2 = ""
+    except ValueError:
+        print('Hups, en tunnista tätä päivämäärää. Syötäthän vain kokonaislukuja!')
+        return
     
     if kortti1 == 10:
         kortti2 = 19
-
     elif kortti1 < 10:
-
         kortti2 = kortti1 + 9
     else:
-    
         kortti2 = (kortti1 // 10) + (kortti1 % 10)
 
     print(f"{GREEN}Kortin numero on ensimmäisen laskun jälkeen: {kortti1}{RESET}")
     print(f"{GREEN}Kortin numero on toisen laskun jälkeen: {kortti2}{RESET}")
     
-    # korttipakka = {10: 10, 11: 11, 12: 12, 13: 13, 14: 14, 
-    #                15: 15, 16: 16, 17: 17, 18: 18, 19: 19,
-    #                20: 20, 21: 21}
-
-    # kortti2 = korttipakka.get(kortti2, None)
-    # if kortti2 is None:
-    #     print(f"{RED}Kortin numero ei vastaa kortteja pakassa.{RESET}")
-    #     return
-
+    if kortti2 < 10 or kortti2 > 22:    # Tarkistaa löytyykö lukua vastaavaa korttia
+        print(f"{RED}Kortin numero ei vastaa kortteja pakassa.{RESET}")
+        return
+    
     selitys = lue_tiedosto(tiedosto, kortti2)
-
-    # if selitys is None:
-    #     print(f"{RED}Kortin selitystä ei löytynyt tiedostosta.{RESET}")
-    #     return
+   
+    if selitys is None:
+        print(f"{RED}Kortin selitystä ei löytynyt tiedostosta.{RESET}")
+        return
 
     kappaleet = selitys.split("\n\n")
     muotoiltu_selitys = "\n\n".join([textwrap.fill(kappale, width=90) for kappale in kappaleet])
