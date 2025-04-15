@@ -23,7 +23,7 @@ def hae_kortin_selitys(tiedosto, kortin_numero):
     return "Korttia ei löytynyt."
 
 def kortin_selitys():
-    tiedosto = "isoarcana.txt"
+    tiedosto = "elamankortit.txt"
 
     #Tehdään looppi, joka pyytää käyttäjältä kortin numeroa
     #ja tarkistaa, että se on oikea
