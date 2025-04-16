@@ -17,13 +17,17 @@ def main():
 
         try: 
             if valinta == "1":
-                vuoden_kortti()
+                #vuoden_kortti()
+                pass
             elif valinta == "2":
-                elaman_kortti()
+                #elaman_kortti()
+                pass
             elif valinta == "3":
-                satunnainen_kortti()
+                #satunnainen_kortti()
+                pass
             elif valinta == "4":
-                kortin_selitys()
+                #kortin_selitys()
+                pass
             else:
                 print("Jos haluat, voimme kokeilla uudelleen. Valitse intuitiosi avulla")
 
