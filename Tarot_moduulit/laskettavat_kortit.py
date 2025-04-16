@@ -19,7 +19,7 @@ def elaman_kortti():
 
     while True:
         try:
-            kuukausi = int(input("Anna syntymäkuukausi (kk): "))
+            kuukausi = int(input("\nAnna syntymäkuukausi (kk): "))
             if not 1 <= kuukausi <= 12:
                 raise ValueError
             break
@@ -28,7 +28,7 @@ def elaman_kortti():
 
     while True:
         try:
-            vuosi = int(input("Anna vuosi, jolle haluat nostaa kortin esim. 2025 (vvvv): "))
+            vuosi = int(input("\nAnna vuosi, jolle haluat nostaa kortin esim. 2025 (vvvv): "))
             if not 1000 <= vuosi <= 9999:
                 raise ValueError
             break
