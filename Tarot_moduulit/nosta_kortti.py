@@ -8,12 +8,17 @@ def kortin_selitys():
     tiedosto = "isoarcana.txt"
     text = '☾ ⋆*･ﾟ:⋆*･ﾟ'
 
+<<<<<<< HEAD
     kortit_lista = ['0. Narri,','1. Maagikko', '2. Ylipapitar', '3. Hallitsijatar', '4. Hallitsija', '5. Ylipappi',
                 '6. Rakastavaiset', '7. Vaunut', '8. Voima', '9. Erakko', '10. Kohtalonpyörä', '11. Oikeus', '12. Hirtetty',
                 '13. Kuolema', '14. Kohtuus', '15. Paholainen', '16. Torni', '17. Tähti', '18. Kuu', '19. Aurinko', '20. Tuomio', '21. Maailma']
 
     for kortti in kortit_lista:
         print(kortti)
+=======
+    kortit_lista = []
+
+>>>>>>> f249566e31d346bef2a53e768eebd6aaf34f3262
     #Tehdään looppi, joka pyytää käyttäjältä kortin numeroa
     #ja tarkistaa, että se on oikea
     while True: 
@@ -26,12 +31,11 @@ def kortin_selitys():
         except ValueError:
             print(f"{RED}""\nAnna numero välillä 0-21, ei kirjainta tai muuta merkkiä."f"{RESET}")
 
-    #Haetaan kortin selitys funktiosta, joka lukee sisältöä tiedostosta
-    #ja etsii kortin numeron perusteella selityksen
+
     selitys = lukija.lue_tiedosto(tiedosto, kortin_numero)
    
     # Muotoillaan selitys siten, että se ei ylitä 90 merkkiä, näin selityksiä on vähän mukavampia lukea
-    kappaleet = selitys.split("\n\n") # Oletetaan, että kappaleet on erotettu kahdella rivinvaihdolla
+    kappaleet = selitys.split("\n\n")
     muotoiltu_selitys = "\n\n".join([textwrap.fill(kappale, width=90) for kappale in kappaleet])
     
     print("\nHaetaan korttia pakasta...\n")
@@ -47,7 +51,7 @@ def satunnainen_kortti():
     text = "*✧･ﾟ: *✧･ﾟ:"
 
     print("\n" + "Kysy mielessäsi kysymys ja anna universumin vastata." + "\n")
-    input("Paina mitä tahansa näppäintä ja anna kortin johdattaa sinut vastauksen äärelle..." + "\n")
+    input("Paina Enter ja anna kortin johdattaa sinut vastauksen äärelle..." + "\n")
 
     # Tämä funktio valitsee satunnaisen kortin ja tulostaa sen selityksen
     kortin_numero = random.choice(range(1, 23))  #choice() valitsee satunnaisen kortin

@@ -2,7 +2,7 @@
 import time
 import laskettavat_kortit
 import nosta_kortti
-from varit import RED, GREEN, LILA, BLUE, YELLOW, DEEPMAGENTA, PINK, ORANGE, CYAN, RESET
+from varit import RED, GREEN, LILA, BLUE, YELLOW, DEEPMAGENTA, PINK, ORANGE, RESET
 
 def nayta_valikko():
     print(f'''
@@ -59,12 +59,12 @@ def main():
             if another_one == "1":
                 continue
             if another_one == "2":
-                print(f"{LILA}""\n ☾ ⋆*･ﾟ:⋆*･ﾟIstuntomme päättyy, mutta korttien taika jää kanssasi. Pidä huolta itsestäsi! ☾ ⋆*･ﾟ:⋆*･ﾟ\n"f"{RESET}")
+                print(f"{LILA}""\nIstuntomme päättyy, mutta korttien taika jää kanssasi. Pidä huolta itsestäsi!\n"f"{RESET}")
                 break
             else:
                 print(f"{LILA}""\nValinta ei ole oikein, mutta voit aina palata korttien pariin. Kiitos ja näkemiin!\n"f"{RESET}")
                 break
 
         except Exception as e: # Käsittelee arvaamattomat yleisimmät virheet, tallentaa ne muuttujaan ja tulostaa tiedot käyttäjälle
-            print(f" ☾ ⋆*･ﾟ:⋆*･ﾟTapahtui virhe ☾ ⋆*･ﾟ:⋆*･ﾟ: {e}.")
+            print(f"Tapahtui virhe: {e}.")
 main()
