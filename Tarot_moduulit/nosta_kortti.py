@@ -41,7 +41,7 @@ def satunnainen_kortti():
     text = "*✧･ﾟ: *✧･ﾟ:"
 
     print("\n" + "Kysy mielessäsi kysymys ja anna universumin vastata." + "\n")
-    input("Paina Enter ja anna kortin johdattaa sinut vastauksen äärelle..." + "\n")
+    input("Paina mitä tahansa näppäintä ja anna kortin johdattaa sinut vastauksen äärelle..." + "\n")
 
     # Tämä funktio valitsee satunnaisen kortin ja tulostaa sen selityksen
     kortin_numero = random.choice(range(1, 23))  #choice() valitsee satunnaisen kortin
