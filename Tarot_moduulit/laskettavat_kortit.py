@@ -8,17 +8,43 @@ def elaman_kortti():
     tiedosto = "elamankortit.txt"
     text = '☾ ⋆*･ﾟ:⋆*･ﾟ'
 
-    try:
-        paiva = int(input("Anna syntymäpäivä (pp): "))
-        kuukausi = int(input("Anna syntymäkuukausi(kk): "))
-        vuosi = int(input("Anna syntymävuosi(vvvv): "))
+    while True:
+        try:
+            paiva = int(input("\nAnna syntymäpäivä (pp): "))
+            if not 1 <= paiva <= 31:
+                raise ValueError
+            break
+        except ValueError:
+            print("Syötä kelvollinen päivä (1–31).")
 
-        vuoden_parit = [int(vuosi) for vuosi in str(vuosi)]
-        kortti1 = (paiva + kuukausi + sum(vuoden_parit)) // 10 + (paiva + kuukausi + sum(vuoden_parit)) % 10
-        kortti2 = ""
-    except ValueError:
-        print('Hups, en tunnista tätä päivämäärää. Syötäthän vain kokonaislukuja!')
-        return
+    while True:
+        try:
+            kuukausi = int(input("Anna syntymäkuukausi (kk): "))
+            if not 1 <= kuukausi <= 12:
+                raise ValueError
+            break
+        except ValueError:
+            print("Syötä kelvollinen kuukausi (1–12).")
+
+    while True:
+        try:
+            vuosi = int(input("Anna vuosi, jolle haluat nostaa kortin esim. 2025 (vvvv): "))
+            if not 1000 <= vuosi <= 9999:
+                raise ValueError
+            break
+        except ValueError:
+            print("Syötä kelvollinen vuosiluku nelinumeroisena (esim. 2025).")
+    # try:
+    #     paiva = int(input("Anna syntymäpäivä (pp): "))
+    #     kuukausi = int(input("Anna syntymäkuukausi(kk): "))
+    #     vuosi = int(input("Anna syntymävuosi(vvvv): "))
+
+    vuoden_parit = [int(vuosi) for vuosi in str(vuosi)]
+    kortti1 = (paiva + kuukausi + sum(vuoden_parit)) // 10 + (paiva + kuukausi + sum(vuoden_parit)) % 10
+    kortti2 = ""
+        # except ValueError:
+        # print('Hups, en tunnista tätä päivämäärää. Syötäthän vain kokonaislukuja!')
+        # return
 
     if kortti1 == 10:
         kortti2 = 19
@@ -30,9 +56,6 @@ def elaman_kortti():
     if kortti2 < 10:
         kortti2 = kortti1
 
-    print(f"{GREEN}Kortin numero on ensimmäisen laskun jälkeen: {kortti1}{RESET}")
-    print(f"{GREEN}Kortin numero on toisen laskun jälkeen: {kortti2}{RESET}")
-    
     if kortti2 < 10 or kortti2 > 22:    # Tarkistaa löytyykö lukua vastaavaa korttia
         print(f"{RED}Kortin numero ei vastaa kortteja pakassa.{RESET}")
         return
