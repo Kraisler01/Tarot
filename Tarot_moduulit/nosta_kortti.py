@@ -2,17 +2,7 @@ import time
 import textwrap
 import lukija
 import random
-
-RED = '\033[38;2;255;0;95m'
-GREEN = '\033[38;2;135;215;135m'
-LILA = '\033[38;2;215;175;225m'
-BLUE = '\033[38;2;135;215;225m'
-YELLOW = '\033[38;2;255;255;135m'
-DEEPMAGENTA = '\033[38;2;128;0;128m'
-PINK = '\033[38;2;255;105;170m'
-ORANGE = '\033[38;2;240;163;10m'
-CYAN = '\033[96m'
-RESET = '\033[0m'
+from varit import RED, GREEN, LILA, BLUE, YELLOW, DEEPMAGENTA, PINK, ORANGE, CYAN, RESET
 
 def kortin_selitys():
     tiedosto = "isoarcana.txt"
