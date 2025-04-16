@@ -2,11 +2,13 @@ import time
 import textwrap
 import lukija
 import random
-from varit import RED, GREEN, LILA, BLUE, YELLOW, DEEPMAGENTA, PINK, ORANGE, CYAN, RESET
+from varit import RED, GREEN, LILA, BLUE, YELLOW, DEEPMAGENTA, PINK, ORANGE, RESET
 
 def kortin_selitys():
     tiedosto = "isoarcana.txt"
     text = '☾ ⋆*･ﾟ:⋆*･ﾟ'
+
+    kortit_lista = []
 
     #Tehdään looppi, joka pyytää käyttäjältä kortin numeroa
     #ja tarkistaa, että se on oikea
@@ -41,7 +43,7 @@ def satunnainen_kortti():
     text = "*✧･ﾟ: *✧･ﾟ:"
 
     print("\n" + "Kysy mielessäsi kysymys ja anna universumin vastata." + "\n")
-    input("Paina mitä tahansa näppäintä ja anna kortin johdattaa sinut vastauksen äärelle..." + "\n")
+    input("Paina Enter ja anna kortin johdattaa sinut vastauksen äärelle..." + "\n")
 
     # Tämä funktio valitsee satunnaisen kortin ja tulostaa sen selityksen
     kortin_numero = random.choice(range(1, 23))  #choice() valitsee satunnaisen kortin
