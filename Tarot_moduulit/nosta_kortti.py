@@ -18,7 +18,7 @@ def kortin_selitys():
             else:
                 print(f"{RED}""\nKortin numeron tulee olla välillä 0–21."f"{RESET}")
         except ValueError:
-            print(f"{RED}""Anna numero välillä 0-21, ei kirjainta tai muuta merkkiä."f"{RESET}")
+            print(f"{RED}""\nAnna numero välillä 0-21, ei kirjainta tai muuta merkkiä."f"{RESET}")
 
     #Haetaan kortin selitys funktiosta, joka lukee sisältöä tiedostosta
     #ja etsii kortin numeron perusteella selityksen
