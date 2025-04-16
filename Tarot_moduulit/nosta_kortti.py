@@ -2,11 +2,13 @@ import time
 import textwrap
 import lukija
 import random
-from varit import RED, GREEN, LILA, BLUE, YELLOW, DEEPMAGENTA, PINK, ORANGE, CYAN, RESET
+from varit import RED, GREEN, LILA, BLUE, YELLOW, DEEPMAGENTA, PINK, ORANGE, RESET
 
 def kortin_selitys():
     tiedosto = "isoarcana.txt"
     text = '☾ ⋆*･ﾟ:⋆*･ﾟ'
+
+    kortit_lista = []
 
     #Tehdään looppi, joka pyytää käyttäjältä kortin numeroa
     #ja tarkistaa, että se on oikea

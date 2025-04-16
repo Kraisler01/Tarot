@@ -120,7 +120,7 @@ def elaman_kortti():
 
     while True:
         try:
-            vuosi = int(input("Anna vuosi, jolle haluat nostaa kortin esim. 2025 (vvvv): "))
+            vuosi = int(input("Anna syntymävuosi (vvvv): "))
             if not 1000 <= vuosi <= 9999:
                 raise ValueError
             break
@@ -167,14 +167,14 @@ def elaman_kortti():
         print(f"{YELLOW}{char}{RESET}", end='', flush=True)
         time.sleep(0.3)
 
-    print(f"{ORANGE}\n\n{muotoiltu_selitys}\n{RESET}")
+    print(f"{PINK}\n\n{muotoiltu_selitys}\n{RESET}")
     time.sleep(2)
 
 def satunnainen_kortti():
     text = "*✧･ﾟ: *✧･ﾟ:"
 
     print("\n" + "Kysy mielessäsi kysymys ja anna universumin vastata." + "\n")
-    input("Paina Enter ja anna kortin johdattaa sinut vastauksen äärelle..." + "\n")
+    input("Paina mitä tahansa näppäintä ja anna kortin johdattaa sinut vastauksen äärelle..." + "\n")
 
     # Tämä funktio valitsee satunnaisen kortin ja tulostaa sen selityksen
     kortin_numero = random.choice(range(1, 23))  #choice() valitsee satunnaisen kortin
