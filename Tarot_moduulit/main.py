@@ -19,7 +19,22 @@ def nayta_valikko():
 def main():
 
     print(f"{LILA}""\nTervetuloa korttien viisauden äärelle - tässä tilassa universumi puhuu!"f"{RESET}")
+    print(f'''
+    {LILA}Ohjeita käyttäjälle:
+          
+        1 – Vuoden kortti
+    Nosta esiin vuoden matkan ydinenergia. Mitä oppia, valoa tai haastetta tämä vuosi tuo sinulle?
+    
+        2 – Elämän kortit
+    Nämä kortit kulkevat kanssasi koko elämäsi – kuin sielun kompassi.
+    
+        3 – Kysy korteilta
+    Onko mielesi mutkalla? Nosta ohjaava kortti ja anna sen viestin valaista tiesi.
 
+        4 – Kortin selitys
+    Haluatko ymmärtää tiettyä korttia syvemmin? Syötä kortin numero ja näät selityksen.{RESET}
+        ''')
+    
     while True:
         time.sleep(1)
         nayta_valikko()
