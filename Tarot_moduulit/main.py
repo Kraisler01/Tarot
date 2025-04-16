@@ -18,21 +18,21 @@ def nayta_valikko():
 
 def main():
 
-    print(f"{LILA}""\nTervetuloa korttien viisauden äärelle - tässä tilassa universumi puhuu!"f"{RESET}")
+    print(f"{YELLOW}""\nTervetuloa korttien viisauden äärelle - tässä tilassa universumi puhuu!"f"{RESET}")
     print(f'''
-    {LILA}Ohjeita käyttäjälle:
+    {LILA}Ohjeita käyttäjälle:{RESET}
           
-        1 – Vuoden kortti
-    Nosta esiin vuoden matkan ydinenergia. Mitä oppia, valoa tai haastetta tämä vuosi tuo sinulle?
+        {ORANGE}1 – Vuoden kortti{RESET}
+    {LILA}Nosta esiin vuoden matkan ydinenergia. Mitä oppia, valoa tai haastetta tämä vuosi tuo sinulle?{RESET}
     
-        2 – Elämän kortit
-    Nämä kortit kulkevat kanssasi koko elämäsi – kuin sielun kompassi.
+        {PINK}2 – Elämän kortit{RESET}
+    {LILA}Nämä kortit kulkevat kanssasi koko elämäsi – kuin sielun kompassi.{RESET}
     
-        3 – Kysy korteilta
-    Onko mielesi mutkalla? Nosta ohjaava kortti ja anna sen viestin valaista tiesi.
+        {GREEN}3 – Kysy korteilta{RESET}
+    {LILA}Onko mielesi mutkalla? Nosta ohjaava kortti ja anna sen viestin valaista tiesi.{RESET}
 
-        4 – Kortin selitys
-    Haluatko ymmärtää tiettyä korttia syvemmin? Syötä kortin numero ja näät selityksen.{RESET}
+        {BLUE}4 – Kortin selitys{RESET}
+    {LILA}Haluatko ymmärtää tiettyä korttia syvemmin? Syötä kortin numero ja näät selityksen.{RESET}
         ''')
     
     while True:
@@ -57,7 +57,6 @@ def main():
 
             print(f"{LILA}""\nKaipaavatko sydämesi ja mielesi vielä lisää opastusta korttien kautta?\n"f"{RESET}")
             another_one = input(f"{LILA}""Valinta on sinun (1 Kyllä /2 Ei): "f"{RESET}")
-
             if another_one == "1":
                 continue
             if another_one == "2":

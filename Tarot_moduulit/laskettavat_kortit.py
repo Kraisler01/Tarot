@@ -1,7 +1,7 @@
 import time
 import lukija
 import textwrap
-from varit import RED, GREEN, LILA, BLUE, YELLOW, DEEPMAGENTA, PINK, ORANGE, CYAN, RESET
+from varit import RED, GREEN, LILA, BLUE, YELLOW, DEEPMAGENTA, PINK, ORANGE, RESET
 
 def elaman_kortti():
 
