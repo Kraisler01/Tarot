@@ -19,7 +19,7 @@ def elaman_kortti():
     except ValueError:
         print('Hups, en tunnista tätä päivämäärää. Syötäthän vain kokonaislukuja!')
         return
-    
+
     if kortti1 == 10:
         kortti2 = 19
     elif kortti1 < 10:
