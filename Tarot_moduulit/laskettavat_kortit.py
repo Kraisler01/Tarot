@@ -28,7 +28,7 @@ def elaman_kortti():
 
     while True:
         try:
-            vuosi = int(input("\nAnna vuosi, jolle haluat nostaa kortin esim. 2025 (vvvv): "))
+            vuosi = int(input("\nAnna syntymävuosi (vvvv): "))
             if not 1000 <= vuosi <= 9999:
                 raise ValueError
             break
@@ -67,7 +67,7 @@ def elaman_kortti():
         print(f"{YELLOW}{char}{RESET}", end='', flush=True)
         time.sleep(0.3)
 
-    print(f"{ORANGE}\n\n{muotoiltu_selitys}\n{RESET}")
+    print(f"{PINK}\n\n{muotoiltu_selitys}\n{RESET}")
     time.sleep(2)
 
 def vuodenkortti():

@@ -4,7 +4,6 @@ import laskettavat_kortit
 import nosta_kortti
 from varit import RED, GREEN, LILA, BLUE, YELLOW, DEEPMAGENTA, PINK, ORANGE, CYAN, RESET
 
-
 def nayta_valikko():
     print(f'''
         Syötä haluamaasi toimenpidettä vastaava luku.
