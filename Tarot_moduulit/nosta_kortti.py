@@ -2,7 +2,6 @@ import time
 import textwrap
 import lukija
 import random
-from varit import RED, GREEN, LILA, BLUE, YELLOW, DEEPMAGENTA, PINK, ORANGE, CYAN, RESET
 from varit import RED, GREEN, LILA, BLUE, YELLOW, DEEPMAGENTA, PINK, ORANGE, RESET
 
 def kortin_selitys():
