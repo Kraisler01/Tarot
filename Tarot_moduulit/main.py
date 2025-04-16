@@ -17,10 +17,14 @@ def nayta_valikko():
 
 
 def main():
-
+    text = '\n*:･ﾟ✧*:･ﾟ✧‧͙⁺˚*･༓☾.｡*ﾟ+.*.｡ﾟ+..｡*ﾟ+✧･ﾟ: *✧･ﾟ:* *:･ﾟ✧*:･ﾟ✧｡ﾟ+..｡*ﾟ+✧･ﾟ*\n'
+    
     # Tulostaa ohjeet
 
     print(f"{YELLOW}""\nTervetuloa korttien viisauden äärelle - tässä tilassa universumi puhuu!"f"{RESET}")
+    for char in text:
+        print(f"{YELLOW}{char}{RESET}", end='', flush=True)
+        time.sleep(0.02)
     print(f'''
     {LILA}Ohjeita käyttäjälle:{RESET}
           
