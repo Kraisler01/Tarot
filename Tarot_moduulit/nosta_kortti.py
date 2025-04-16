@@ -20,12 +20,11 @@ def kortin_selitys():
         except ValueError:
             print(f"{RED}""\nAnna numero välillä 0-21, ei kirjainta tai muuta merkkiä."f"{RESET}")
 
-    #Haetaan kortin selitys funktiosta, joka lukee sisältöä tiedostosta
-    #ja etsii kortin numeron perusteella selityksen
+
     selitys = lukija.lue_tiedosto(tiedosto, kortin_numero)
    
     # Muotoillaan selitys siten, että se ei ylitä 90 merkkiä, näin selityksiä on vähän mukavampia lukea
-    kappaleet = selitys.split("\n\n") # Oletetaan, että kappaleet on erotettu kahdella rivinvaihdolla
+    kappaleet = selitys.split("\n\n")
     muotoiltu_selitys = "\n\n".join([textwrap.fill(kappale, width=90) for kappale in kappaleet])
     
     print("\nHaetaan korttia pakasta...\n")
