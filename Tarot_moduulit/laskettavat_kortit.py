@@ -34,17 +34,10 @@ def elaman_kortti():
             break
         except ValueError:
             print("Syötä kelvollinen vuosiluku nelinumeroisena (esim. 2025).")
-    # try:
-    #     paiva = int(input("Anna syntymäpäivä (pp): "))
-    #     kuukausi = int(input("Anna syntymäkuukausi(kk): "))
-    #     vuosi = int(input("Anna syntymävuosi(vvvv): "))
 
     vuoden_parit = [int(vuosi) for vuosi in str(vuosi)]
     kortti1 = (paiva + kuukausi + sum(vuoden_parit)) // 10 + (paiva + kuukausi + sum(vuoden_parit)) % 10
     kortti2 = ""
-        # except ValueError:
-        # print('Hups, en tunnista tätä päivämäärää. Syötäthän vain kokonaislukuja!')
-        # return
 
     if kortti1 == 10:
         kortti2 = 19
