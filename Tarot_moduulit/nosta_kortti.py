@@ -14,9 +14,10 @@ def kortin_selitys():
 
     for kortti in kortit_lista:
         print(f"{BLUE}"+ kortti + f"{RESET}")
-    #Tehdään looppi, joka pyytää käyttäjältä kortin numeroa
-    #ja tarkistaa, että se on oikea
+
+
     while True: 
+        # Pyytää käyttäjältä kortin numeron ja tarkistaa sen oikeellisuuden 
         try:
             kortin_numero = int(input("\nAnna kortin numero, josta haluat tietää lisää (0–21): "))
             if 0 <= kortin_numero <= 21:
@@ -26,15 +27,15 @@ def kortin_selitys():
         except ValueError:
             print(f"{RED}""\nAnna numero välillä 0-21, ei kirjainta tai muuta merkkiä."f"{RESET}")
 
-    #Haetaan kortin selitys funktiosta, joka lukee sisältöä tiedostosta
-    #ja etsii kortin numeron perusteella selityksen
     selitys = lukija.lue_tiedosto(tiedosto, kortin_numero)
    
-    # Muotoillaan selitys siten, että se ei ylitä 90 merkkiä, näin selityksiä on vähän mukavampia lukea
-    kappaleet = selitys.split("\n\n") # Oletetaan, että kappaleet on erotettu kahdella rivinvaihdolla
+    # Muotoilee selityksen helpommin luettevaksi
+    kappaleet = selitys.split("\n\n")
     muotoiltu_selitys = "\n\n".join([textwrap.fill(kappale, width=90) for kappale in kappaleet])
     
     print("\nHaetaan korttia pakasta...\n")
+    
+    # Tulostaa merkit 0,5 sekunnin välein
     for char in text:
         print(f"{YELLOW}{char}{RESET}", end='', flush=True)
         time.sleep(0.3)
@@ -49,14 +50,14 @@ def satunnainen_kortti():
     print("\n" + "Kysy mielessäsi kysymys ja anna universumin vastata." + "\n")
     input("Paina mitä tahansa näppäintä ja anna kortin johdattaa sinut vastauksen äärelle..." + "\n")
 
-    # Tämä funktio valitsee satunnaisen kortin ja tulostaa sen selityksen
-    kortin_numero = random.choice(range(1, 23))  #choice() valitsee satunnaisen kortin
+    # Valitsee satunnaisen kortin
+    kortin_numero = random.choice(range(1, 23))
     selitys = lukija.lue_tiedosto("ennustus.txt", kortin_numero)
 
     time.sleep(1)
     print("Sekoitetaan kortteja...\n")
     
-    # Tulosta jokainen merkki puolen sekunnin välein
+    # Tulostaa merkit 0,5 sekunnin välein
     for char in text:
         print(f"{YELLOW}{char}{RESET}", end='', flush=True)
         time.sleep(0.3)
