@@ -6,7 +6,7 @@ from varit import RED, GREEN, LILA, BLUE, YELLOW, DEEPMAGENTA, PINK, ORANGE, RES
 
 def nayta_valikko():
     print(f'''
-        Syötä haluamaasi toimenpidettä vastaava luku.
+        Syötä haluamaasi toimintoa vastaava luku:
 
         {ORANGE}1 Vuoden kortti{RESET}
         {PINK}2 Elämän kortti{RESET}
@@ -63,7 +63,7 @@ def main():
                 print(f"{YELLOW}""\n*✧･ﾟ: *✧･ﾟKiitos ja näkemiin! ☾ ⋆*･ﾟ:⋆*･ﾟ\n"f"{RESET}")
                 break
             else:
-                print(f"{LILA}""\nJos haluat, voimme kokeilla uudelleen. Valitse intuitiosi avulla"f"{RESET}")
+                print(f"{LILA}""\nJos haluat, voimme kokeilla uudelleen. Valitse intuitiosi avulla."f"{RESET}")
 
             # Kysyy ja käsittelee jatketaanko ohjelmaa
             print(f"{LILA}""\nKaipaavatko sydämesi ja mielesi vielä lisää opastusta korttien kautta?\n"f"{RESET}")
@@ -75,7 +75,7 @@ def main():
                 print(f"{LILA}""\nIstuntomme päättyy, mutta korttien taika jää kanssasi. Pidä huolta itsestäsi!\n"f"{RESET}")
                 break
             else:
-                print(f"{LILA}""\nValinta ei ole oikein, mutta voit aina palata korttien pariin. Kiitos ja näkemiin!\n"f"{RESET}")
+                print(f"{LILA}""\nValinta on virheellinen, mutta voit aina palata korttien pariin. Kiitos ja näkemiin!\n"f"{RESET}")
                 break
 
         # Ottaa kiinni muualla käsittelemättömät yleisimmät virheet, tallentaa tiedot muuttujaan ja tulostaa ne käyttäjälle

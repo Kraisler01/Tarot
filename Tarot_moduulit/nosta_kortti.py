@@ -19,13 +19,13 @@ def kortin_selitys():
     while True: 
         # Pyytää käyttäjältä kortin numeron ja tarkistaa sen oikeellisuuden 
         try:
-            kortin_numero = int(input("\nAnna kortin numero, josta haluat tietää lisää (0–21): "))
+            kortin_numero = int(input("\nAnna sen kortin numero, josta haluat tietää lisää (0–21): "))
             if 0 <= kortin_numero <= 21:
                 break  # Jos syöte on kelvollinen, poistutaan loopista
             else:
-                print(f"{RED}""\nKortin numeron tulee olla välillä 0–21."f"{RESET}")
+                print(f"{RED}""\nKortin numeron tulee olla väliltä 0–21."f"{RESET}")
         except ValueError:
-            print(f"{RED}""\nAnna numero välillä 0-21, ei kirjainta tai muuta merkkiä."f"{RESET}")
+            print(f"{RED}""\nAnna numero väliltä 0-21, ei kirjainta tai muuta merkkiä."f"{RESET}")
 
     selitys = lukija.lue_tiedosto(tiedosto, kortin_numero)
    
@@ -34,7 +34,7 @@ def kortin_selitys():
     muotoiltu_selitys = "\n\n".join([textwrap.fill(kappale, width=90) for kappale in kappaleet])
     
     print("\nHaetaan korttia pakasta...\n")
-    
+
     # Tulostaa merkit 0,5 sekunnin välein
     for char in text:
         print(f"{YELLOW}{char}{RESET}", end='', flush=True)
