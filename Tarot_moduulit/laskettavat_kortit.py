@@ -15,7 +15,7 @@ def elaman_kortti():
                 raise ValueError
             break
         except ValueError:
-            print("Syötä kelvollinen päivä (1–31).")
+            print(f"{RED}""\nSyötä kelvollinen päivä (1–31)."f"{RESET}")
 
     while True:
         try:
@@ -24,7 +24,7 @@ def elaman_kortti():
                 raise ValueError
             break
         except ValueError:
-            print("Syötä kelvollinen kuukausi (1–12).")
+            print(f"{RED}""\nSyötä kelvollinen kuukausi (1–12)."f"{RESET}")
 
     while True:
         try:
@@ -33,7 +33,7 @@ def elaman_kortti():
                 raise ValueError
             break
         except ValueError:
-            print("Syötä kelvollinen vuosiluku nelinumeroisena (esim. 2025).")
+            print(f"{RED}""\nSyötä kelvollinen vuosiluku nelinumeroisena (esim. 2025)."f"{RESET}")
 
     vuoden_parit = [int(vuosi) for vuosi in str(vuosi)]
     kortti1 = (paiva + kuukausi + sum(vuoden_parit)) // 10 + (paiva + kuukausi + sum(vuoden_parit)) % 10
